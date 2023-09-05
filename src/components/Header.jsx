@@ -2,15 +2,29 @@ import BudgetDashboard from "./BudgetDashboard";
 import NewBudget from "./NewBudget";
 import PropTypes from "prop-types";
 
-const Header = ({ budget, setBudget, budgetIsValid, setBudgetIsValid }) => {
+const Header = ({
+  expenses,
+  setExpenses,
+  budget,
+  setBudget,
+  budgetIsValid,
+  setBudgetIsValid,
+}) => {
   return (
     <header>
       <h1>Planificador de gastos</h1>
 
       {budgetIsValid ? (
-        <BudgetDashboard budget={budget} />
+        <BudgetDashboard
+          expenses={expenses}
+          setExpenses={setExpenses}
+          budget={budget}
+          setBudget={setBudget}
+          setBudgetIsValid={setBudgetIsValid}
+        />
       ) : (
         <NewBudget
+          expenses={expenses}
           budget={budget}
           setBudget={setBudget}
           setBudgetIsValid={setBudgetIsValid}
@@ -21,6 +35,8 @@ const Header = ({ budget, setBudget, budgetIsValid, setBudgetIsValid }) => {
 };
 
 Header.propTypes = {
+  expenses: PropTypes.array,
+  setExpenses: PropTypes.func,
   budget: PropTypes.number,
   setBudget: PropTypes.func,
   budgetIsValid: PropTypes.bool,
