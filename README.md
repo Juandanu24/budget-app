@@ -8,4 +8,9 @@ Budget App - Using React Js, CSS3, Vite and LocalStorage.
 ### Deployment with Netlify. Domain:
 https://budget-app-tndj.netlify.app/
 
+### // Init:
+- npm i 
+- npm run dev 
+
+
 
